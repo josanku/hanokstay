@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>명품고택 — 한국관광공사 인증 최고 등급 한옥 | Hanokstay by Wehome</title>
+  <meta name="description" content="문화재로 지정된 한옥, 한국관광공사 한옥스테이 최고 등급 — 명품고택 20곳의 이야기." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body{background: #1a1614;}
+
+    .mp-hero{
+      padding: 140px var(--pad) 80px;
+      background:
+        radial-gradient(ellipse at 60% 30%, rgba(176,106,42,.25), transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(168,50,39,.18), transparent 50%),
+        var(--ink);
+      color: var(--hanji);
+      text-align: center;
+      border-bottom: 1px solid rgba(244,237,224,.1);
+    }
+    .mp-hero p.kicker{color: var(--ochre); font-size: 18px; margin: 0 0 16px;}
+    .mp-hero h1{font-family: var(--serif); font-weight: 400; font-size: clamp(46px, 6vw, 84px); line-height: 1; margin: 0 0 24px; letter-spacing: -.01em;}
+    .mp-hero .seal{font-family: var(--serif-kr); font-size: 56px; color: var(--ochre); display: inline-block; padding: 16px 28px; border: 2px solid var(--ochre); margin-bottom: 24px; letter-spacing: .3em; padding-right: 16px;}
+    .mp-hero .lede{font-family: var(--serif); font-size: 21px; color: var(--hanji-deep); max-width: 720px; margin: 0 auto; line-height: 1.6;}
+
+    .mp-meta{display: grid; grid-template-columns: repeat(3, 1fr); max-width: 720px; margin: 48px auto 0; gap: 24px;}
+    .mp-meta__item{text-align: center;}
+    .mp-meta__num{font-family: var(--serif); font-size: 36px; color: var(--ochre); line-height: 1;}
+    .mp-meta__label{font-size: 12px; color: var(--hanji-deep); margin-top: 6px; letter-spacing: .04em;}
+
+    .what-is{max-width: 880px; margin: 0 auto; padding: 80px var(--pad); color: var(--hanji);}
+    .what-is h2{font-family: var(--serif); font-weight: 400; font-size: 36px; margin: 0 0 24px; color: var(--hanji);}
+    .what-is p{font-size: 17px; line-height: 1.75; color: var(--hanji-deep); margin: 0 0 18px;}
+    .what-is em{color: var(--ochre); font-style: italic;}
+
+    .houses-list{max-width: 1100px; margin: 0 auto; padding: 0 var(--pad) 80px;}
+    .house{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(244,237,224,.12);
+      border-radius: 16px;
+      margin-bottom: 28px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 0;
+    }
+    @media (max-width: 880px){.house{grid-template-columns: 1fr;}}
+    .house__cover{
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(176,106,42,.22), rgba(168,50,39,.18));
+      color: var(--hanji);
+      display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 280px;
+      border-right: 1px solid rgba(244,237,224,.08);
+    }
+    @media (max-width: 880px){.house__cover{border-right: none; border-bottom: 1px solid rgba(244,237,224,.08);}}
+    .house__cover h3{
+      font-family: var(--serif-kr); font-size: 32px; font-weight: 500;
+      margin: 0 0 6px; color: var(--hanji);
+    }
+    .house__cover .en{font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--hanji-deep); opacity: .8;}
+    .house__cover .city{font-size: 13px; color: var(--ochre); margin-top: 12px; letter-spacing: .04em; text-transform: uppercase;}
+    .house__cover .seal-small{
+      display: inline-block;
+      margin-top: auto;
+      padding: 6px 14px;
+      border: 1px solid var(--ochre);
+      color: var(--ochre);
+      font-family: var(--serif-kr);
+      font-size: 13px;
+      letter-spacing: .1em;
+      width: fit-content;
+      border-radius: 4px;
+    }
+    .house__body{padding: 32px 36px; color: var(--hanji);}
+    .house__story{
+      font-family: var(--serif); font-size: 17px; line-height: 1.75; color: var(--hanji-deep);
+      margin: 0 0 20px;
+    }
+    .house__story::first-letter{
+      font-family: var(--serif); font-size: 48px; float: left; line-height: 1; padding-right: 8px;
+      color: var(--ochre); font-weight: 500;
+    }
+    .house__highlight{
+      font-family: var(--serif); font-style: italic; font-size: 18px;
+      color: var(--ochre); padding: 14px 0; border-top: 1px solid rgba(244,237,224,.1);
+      border-bottom: 1px solid rgba(244,237,224,.1);
+      margin: 0 0 20px;
+    }
+    .house__meta{
+      display: grid; grid-template-columns: 100px 1fr; gap: 6px 14px;
+      font-size: 13px;
+    }
+    .house__meta dt{color: var(--hanji-deep); opacity: .6; font-weight: 500;}
+    .house__meta dd{margin: 0; color: var(--hanji);}
+    .house__exp{margin-top: 14px;}
+    .house__exp-chip{
+      display: inline-block; padding: 3px 10px; margin: 2px 4px 2px 0;
+      background: rgba(244,237,224,.08);
+      color: var(--hanji-deep);
+      border-radius: 999px; font-size: 11px;
+    }
+
+    .filter-bar{
+      max-width: 1100px; margin: 0 auto 32px; padding: 0 var(--pad);
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .filter-bar button{
+      padding: 8px 16px; border: 1px solid rgba(244,237,224,.2);
+      background: transparent; color: var(--hanji-deep);
+      border-radius: 999px; font-size: 13px; cursor: pointer;
+    }
+    .filter-bar button.active{background: var(--ochre); color: var(--ink); border-color: var(--ochre);}
+
+    .closing{
+      background: var(--hanji); color: var(--ink);
+      padding: 64px var(--pad); text-align: center;
+    }
+    .closing h3{font-family: var(--serif); font-size: 32px; margin: 0 0 16px;}
+    .closing p{font-family: var(--serif); font-size: 18px; color: var(--ink-soft); max-width: 600px; margin: 0 auto 24px; line-height: 1.6;}
+
+    .nav{background: rgba(26,22,20,.92); border-bottom-color: rgba(244,237,224,.1);}
+    .nav__inner .nav__logo{color: var(--hanji);}
+    .nav__inner .nav__logo-mark{background: var(--ochre); color: var(--ink);}
+    .nav__inner .nav__logo-text em{color: var(--hanji-deep);}
+    .nav__links a{color: var(--hanji-deep);}
+    .nav__links a:hover{color: var(--ochre);}
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">
+      <span class="nav__logo-mark">韓</span>
+      <span class="nav__logo-text">Hanokstay <em>by Wehome</em></span>
+    </a>
+    <nav class="nav__links">
+      <a href="map.html">지도</a>
+      <a href="villages.html">한옥마을</a>
+      <a href="meongpum-gotaek.html">명품고택</a>
+      <a href="hanok-intro.html">한옥 소개</a>
+      <a href="index.html#become-host">호스트 모집</a>
+    </nav>
+  </div>
+</header>
+
+<section class="mp-hero">
+  <p class="kicker">한국관광공사 인증</p>
+  <div class="seal">名 品</div>
+  <h1>명품고택</h1>
+  <p class="lede">문화재로 지정된 한옥, 300년 한 가문이 지켜온 종택, 한국관광공사가 한 채씩 직접 인증한 최고 등급의 한옥스테이.</p>
+
+  <div class="mp-meta">
+    <div class="mp-meta__item"><div class="mp-meta__num">20</div><div class="mp-meta__label">엄선된 명품고택</div></div>
+    <div class="mp-meta__item"><div class="mp-meta__num">300<span style="font-size:18px;">+</span></div><div class="mp-meta__label">평균 가옥 연식</div></div>
+    <div class="mp-meta__item"><div class="mp-meta__num">12</div><div class="mp-meta__label">국가지정문화재</div></div>
+  </div>
+</section>
+
+<section class="what-is">
+  <h2>명품고택이란 무엇인가</h2>
+  <p>명품고택은 한국관광공사가 운영하는 <em>한옥스테이 인증</em> 최고 등급입니다. 다음 세 가지를 모두 충족해야 합니다.</p>
+  <p><em>(1) 문화재 지정 또는 등록</em> — 국가민속문화재, 보물, 지방문화재 등으로 공식 지정된 한옥. <em>(2) 한옥체험업 정식 등록</em> — 관광진흥법에 따라 지자체에 한옥체험업으로 등록되어 합법적으로 손님을 받을 수 있는 가옥. <em>(3) 종가 또는 대대로 이어진 운영</em> — 한 가문이 200년 이상 지켜온 종택, 또는 동등한 역사적 가치를 가진 한옥.</p>
+  <p>일반 한옥스테이가 <em>잘 지은 집</em>이라면, 명품고택은 <em>잘 살아온 집</em>입니다. 머무는 동안 만나는 것은 시설이 아니라 시간입니다.</p>
+</section>
+
+<div class="filter-bar">
+  <button class="active" data-filter="all">전체</button>
+  <button data-filter="gyeongsang">경상도</button>
+  <button data-filter="jeolla">전라도</button>
+  <button data-filter="chungcheong">충청도</button>
+  <button data-filter="gangwon">강원도</button>
+  <button data-filter="seoul">서울</button>
+</div>
+
+<div class="houses-list" id="houses-list"></div>
+
+<section class="closing">
+  <h3>명품고택, 이렇게 예약합니다</h3>
+  <p>현재는 한국관광공사 한옥홍보 홈페이지(hanok.visitkorea.or.kr)에서 명단 확인 후 각 가옥에 직접 연락하는 구조입니다. 위홈은 이 분산된 예약을 하나의 합법 채널로 통합하는 중입니다.</p>
+  <a href="index.html#become-host" class="btn btn--primary">한옥지기 입점 신청 →</a>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__logo"><span class="nav__logo-mark">韓</span> Hanokstay <em>by Wehome</em></div>
+      <p>한옥에 묵는 가장 합법적인 방법.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>둘러보기</h4>
+        <a href="map.html">지도·통계</a>
+        <a href="villages.html">한옥마을</a>
+        <a href="meongpum-gotaek.html">명품고택</a>
+        <a href="hanok-intro.html">한옥 소개</a>
+      </div>
+      <div>
+        <h4>호스트</h4>
+        <a href="index.html#become-host">호스트 모집</a>
+      </div>
+      <div>
+        <h4>위홈</h4>
+        <a href="https://wehome.me">메인 플랫폼</a>
+        <a href="mailto:hanok@wehome.me">hanok@wehome.me</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Wehome Inc.</span>
+    <span>Seoul · Korea</span>
+  </div>
+</footer>
+
+<script>
+const SIDO_TO_CLUSTER = {
+  "서울특별시": "seoul",
+  "경상북도": "gyeongsang", "경상남도": "gyeongsang",
+  "전라북도": "jeolla", "전라남도": "jeolla",
+  "충청북도": "chungcheong", "충청남도": "chungcheong",
+  "강원특별자치도": "gangwon",
+};
+
+async function loadHouses() {
+  const res = await fetch('data/meongpum-gotaek.json');
+  const data = await res.json();
+  render(data.houses);
+  bindFilter(data.houses);
+}
+
+function render(houses) {
+  const html = houses.map(h => `
+    <article class="house" data-cluster="${SIDO_TO_CLUSTER[h.sido] || 'other'}" data-id="${h.id}">
+      <div class="house__cover">
+        <div>
+          <h3>${h.name_ko}</h3>
+          <div class="en">${h.name_en}</div>
+          <div class="city">${h.city} · ${h.sido}</div>
+        </div>
+        ${h.cultural_property ? `<div class="seal-small">${h.cultural_property}</div>` : ''}
+      </div>
+      <div class="house__body">
+        <p class="house__story">${h.story}</p>
+        <p class="house__highlight">"${h.highlight}"</p>
+        <dl class="house__meta">
+          ${h.year_built ? `<dt>건립</dt><dd>${h.year_built}년경</dd>` : ''}
+          ${h.owner_clan ? `<dt>가문</dt><dd>${h.owner_clan}</dd>` : ''}
+          ${h.rooms ? `<dt>객실</dt><dd>${h.rooms}개 (최대 ${h.max_guests}명)</dd>` : ''}
+        </dl>
+        <div class="house__exp">
+          ${(h.experiences || []).map(e => `<span class="house__exp-chip">${e}</span>`).join('')}
+        </div>
+      </div>
+    </article>
+  `).join('');
+  document.getElementById('houses-list').innerHTML = html;
+}
+
+function bindFilter(houses) {
+  document.querySelectorAll('.filter-bar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      const filtered = f === 'all'
+        ? houses
+        : houses.filter(h => (SIDO_TO_CLUSTER[h.sido] || 'other') === f);
+      render(filtered);
+    });
+  });
+}
+
+loadHouses();
+</script>
+</body>
+</html>

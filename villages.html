@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한옥마을 — 전국 한옥마을 안내 | Hanokstay by Wehome</title>
+  <meta name="description" content="유네스코 세계유산부터 슬로시티까지 — 전국 한옥마을 20곳의 깊이와 차이." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .village-hero{padding: 100px var(--pad) 64px; max-width: var(--maxw); margin: 0 auto;}
+    .village-hero h1{font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; margin: 0 0 16px;}
+    .village-hero .lede{font-family: var(--serif); font-size: 20px; color: var(--muted); max-width: 720px; line-height: 1.6;}
+
+    .village-filter{display: flex; gap: 8px; margin: 24px 0 0; flex-wrap: wrap;}
+    .village-filter button{padding: 8px 16px; border: 1px solid var(--line); background: var(--paper); border-radius: 999px; font-size: 13px; cursor: pointer; color: var(--ink-soft);}
+    .village-filter button.active{background: var(--ink); color: var(--hanji); border-color: var(--ink);}
+
+    .villages-grid{display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: var(--maxw); margin: 0 auto; padding: 32px var(--pad) 96px;}
+    @media (max-width: 880px){.villages-grid{grid-template-columns: 1fr;}}
+
+    .village-card{background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s;}
+    .village-card:hover{transform: translateY(-4px); box-shadow: 0 14px 32px rgba(26,22,20,.10);}
+    .village-card__head{background: linear-gradient(135deg, var(--ochre), #6b3a15); color: var(--hanji); padding: 28px 28px 20px;}
+    .village-card__head h2{font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 0 0 6px; line-height: 1.1;}
+    .village-card__head .en{font-family: var(--serif); font-style: italic; font-size: 14px; opacity: .85;}
+    .village-card__badge{display: inline-block; background: rgba(255,255,255,.18); padding: 4px 10px; border-radius: 999px; font-size: 11px; letter-spacing: .03em; margin-top: 12px;}
+    .village-card__body{padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column;}
+    .village-card__meta{display: grid; grid-template-columns: 80px 1fr; gap: 4px 12px; font-size: 13px; margin-bottom: 16px;}
+    .village-card__meta dt{color: var(--muted); font-weight: 500;}
+    .village-card__meta dd{margin: 0; color: var(--ink-soft);}
+    .village-card__highlight{font-family: var(--serif); font-size: 16px; line-height: 1.6; color: var(--ink); margin: 0 0 16px;}
+    .village-card__chips{display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto;}
+    .village-card__chip{font-size: 11px; padding: 4px 10px; background: var(--hanji); border-radius: 999px; color: var(--ink-soft);}
+
+    /* Color variants by region cluster */
+    .village-card[data-cluster="seoul"] .village-card__head{background: linear-gradient(135deg, #6b4a2b, #2c1810);}
+    .village-card[data-cluster="jeolla"] .village-card__head{background: linear-gradient(135deg, #a83227, #5a1a14);}
+    .village-card[data-cluster="gyeongsang"] .village-card__head{background: linear-gradient(135deg, #6f8a72, #2e4a30);}
+    .village-card[data-cluster="chungcheong"] .village-card__head{background: linear-gradient(135deg, #d4a04a, #8a6020);}
+    .village-card[data-cluster="gangwon"] .village-card__head{background: linear-gradient(135deg, #4a6b8a, #1a3550);}
+    .village-card[data-cluster="jeju"] .village-card__head{background: linear-gradient(135deg, #2e3a59, #0f1729);}
+
+    .map-cta{background: var(--ink); color: var(--hanji); padding: 56px var(--pad); text-align: center; margin-top: 0;}
+    .map-cta h3{font-family: var(--serif); font-size: 32px; margin: 0 0 12px;}
+    .map-cta p{color: var(--hanji-deep); margin: 0 0 24px; max-width: 560px; margin-left: auto; margin-right: auto;}
+    .map-cta .btn--primary{background: var(--ochre); border-color: var(--ochre); color: var(--ink);}
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">
+      <span class="nav__logo-mark">韓</span>
+      <span class="nav__logo-text">Hanokstay <em>by Wehome</em></span>
+    </a>
+    <nav class="nav__links">
+      <a href="map.html">지도</a>
+      <a href="villages.html">한옥마을</a>
+      <a href="meongpum-gotaek.html">명품고택</a>
+      <a href="hanok-intro.html">한옥 소개</a>
+      <a href="index.html#become-host">호스트 모집</a>
+    </nav>
+  </div>
+</header>
+
+<section class="village-hero">
+  <p class="kicker">한옥마을</p>
+  <h1>한 마을이 곧<br/>하나의 문장입니다.</h1>
+  <p class="lede">한옥마을은 단순히 한옥이 모여있는 곳이 아닙니다. 한 가문이 500년을 쌓아온 시간이거나, 한 도시가 자신의 정체성을 지키기로 결정한 결과입니다. 전국 20곳의 한옥마을 — 유네스코 세계유산부터 슬로시티까지 — 그 차이를 안내합니다.</p>
+
+  <div class="village-filter">
+    <button class="active" data-filter="all">전체</button>
+    <button data-filter="unesco">유네스코</button>
+    <button data-filter="seoul">서울</button>
+    <button data-filter="jeolla">전라도</button>
+    <button data-filter="gyeongsang">경상도</button>
+    <button data-filter="chungcheong">충청도</button>
+    <button data-filter="gangwon">강원도</button>
+    <button data-filter="jeju">제주</button>
+  </div>
+</section>
+
+<div class="villages-grid" id="villages-grid"></div>
+
+<section class="map-cta">
+  <h3>지도 위에서 한 번에 보기</h3>
+  <p>모든 한옥마을과 한옥체험업 등록 한옥스테이를 지도 위에서 한눈에 보고 싶다면.</p>
+  <a href="map.html" class="btn btn--primary">지도로 가기 →</a>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__logo"><span class="nav__logo-mark">韓</span> Hanokstay <em>by Wehome</em></div>
+      <p>한옥에 묵는 가장 합법적인 방법.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>둘러보기</h4>
+        <a href="map.html">지도·통계</a>
+        <a href="villages.html">한옥마을</a>
+        <a href="meongpum-gotaek.html">명품고택</a>
+        <a href="hanok-intro.html">한옥 소개</a>
+      </div>
+      <div>
+        <h4>호스트</h4>
+        <a href="index.html#become-host">호스트 모집</a>
+      </div>
+      <div>
+        <h4>위홈</h4>
+        <a href="https://wehome.me">메인 플랫폼</a>
+        <a href="mailto:hanok@wehome.me">hanok@wehome.me</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Wehome Inc.</span>
+    <span>Seoul · Korea</span>
+  </div>
+</footer>
+
+<script>
+const REGION_TO_CLUSTER = {
+  "Seoul": "seoul",
+  "Jeonju": "jeolla", "Suncheon": "jeolla", "Damyang": "jeolla",
+  "Andong": "gyeongsang", "Gyeongju": "gyeongsang", "Seongju": "gyeongsang",
+  "Yeongju": "gyeongsang", "Hamyang": "gyeongsang", "Sancheong": "gyeongsang",
+  "Cheongsong": "gyeongsang",
+  "Asan": "chungcheong",
+  "Gangneung": "gangwon", "Goseong": "gangwon",
+  "Jeju": "jeju",
+};
+
+async function loadVillages() {
+  const res = await fetch('data/villages.json');
+  const data = await res.json();
+  renderVillages(data.villages);
+  bindFilter(data.villages);
+}
+
+function clusterOf(v) {
+  return REGION_TO_CLUSTER[v.city] || 'gyeongsang';
+}
+
+function renderVillages(villages) {
+  const html = villages.map(v => {
+    const cluster = clusterOf(v);
+    const isUnesco = v.designation && v.designation.includes('유네스코');
+    return `
+    <article class="village-card" data-cluster="${cluster}" data-id="${v.id}">
+      <div class="village-card__head">
+        <h2>${v.name_ko}</h2>
+        <div class="en">${v.name_en} · ${v.city}</div>
+        ${v.designation ? `<span class="village-card__badge">${v.designation.split('(')[0].trim()}</span>` : ''}
+      </div>
+      <div class="village-card__body">
+        <dl class="village-card__meta">
+          <dt>규모</dt><dd>${v.scale || '—'}</dd>
+          <dt>형성</dt><dd>${v.founded || '—'}</dd>
+          <dt>주소</dt><dd>${v.address.replace(/(특별시|광역시|특별자치도|특별자치시).*?(시|군|구)/, '$1 …').slice(0, 40)}…</dd>
+        </dl>
+        <p class="village-card__highlight">${v.highlight}</p>
+        <div class="village-card__chips">
+          ${(v.best_for || []).map(t => `<span class="village-card__chip">${t}</span>`).join('')}
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+  document.getElementById('villages-grid').innerHTML = html;
+}
+
+function bindFilter(villages) {
+  document.querySelectorAll('.village-filter button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.village-filter button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      const filtered = f === 'all'
+        ? villages
+        : f === 'unesco'
+          ? villages.filter(v => v.designation && v.designation.includes('유네스코'))
+          : villages.filter(v => clusterOf(v) === f);
+      renderVillages(filtered);
+    });
+  });
+}
+
+loadVillages();
+</script>
+</body>
+</html>

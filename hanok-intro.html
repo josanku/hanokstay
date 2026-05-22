@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한옥, 무엇입니까 — 한옥 소개 | Hanokstay by Wehome</title>
+  <meta name="description" content="한옥의 정의, 구조, 평면, 지역적 차이, 역사 — 한국 전통 가옥 한옥에 대한 한국어 종합 안내." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body{background: var(--cream); font-family: 'Noto Sans KR', var(--sans);}
+
+    .intro-hero{
+      padding: 140px var(--pad) 80px;
+      max-width: 980px; margin: 0 auto;
+      text-align: center;
+    }
+    .intro-hero h1{
+      font-family: 'Noto Serif KR', var(--serif-kr);
+      font-weight: 500;
+      font-size: clamp(48px, 7vw, 96px);
+      line-height: 1;
+      margin: 0 0 24px;
+      letter-spacing: -.02em;
+    }
+    .intro-hero h1 em{font-style: normal; color: var(--ochre); border-bottom: 4px solid var(--ochre); padding-bottom: 4px;}
+    .intro-hero .lede{
+      font-family: 'Noto Serif KR', serif;
+      font-size: 22px; line-height: 1.7; color: var(--ink-soft);
+      max-width: 720px; margin: 0 auto;
+    }
+
+    .toc-wrap{max-width: 720px; margin: 32px auto 0; padding: 0 var(--pad);}
+    .intro-toc{
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: 12px; padding: 24px 28px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px;
+    }
+    @media (max-width: 560px){.intro-toc{grid-template-columns: 1fr;}}
+    .intro-toc h4{grid-column: 1 / -1; margin: 0 0 8px; font-size: 12px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase;}
+    .intro-toc a{color: var(--ink); font-size: 14px; padding: 4px 0; border-bottom: 1px solid transparent;}
+    .intro-toc a:hover{color: var(--ochre); border-color: var(--ochre);}
+    .intro-toc a span{color: var(--muted); font-size: 12px; margin-right: 6px; font-family: var(--serif);}
+
+    .intro-section{
+      max-width: 760px; margin: 0 auto;
+      padding: 80px var(--pad);
+    }
+    .intro-section h2{
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 500; font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .intro-section h2 .ch{font-family: 'Noto Serif KR', serif; font-size: .7em; color: var(--ochre); margin-left: 12px; font-weight: 400;}
+    .intro-section h3{
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 500; font-size: 22px;
+      margin: 36px 0 12px;
+    }
+    .intro-section p{
+      font-size: 17px; line-height: 1.85; color: var(--ink);
+      margin: 0 0 18px;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .intro-section em{color: var(--ochre); font-style: normal; font-weight: 500;}
+    .intro-section strong{font-weight: 600;}
+    .intro-section ul{font-size: 16px; line-height: 1.9; padding-left: 22px; margin: 0 0 20px;}
+    .intro-section li{margin-bottom: 8px;}
+
+    .pullquote{
+      font-family: 'Noto Serif KR', serif;
+      font-size: 26px; line-height: 1.5;
+      color: var(--ink);
+      border-left: 4px solid var(--ochre);
+      padding: 16px 0 16px 28px;
+      margin: 48px -20px;
+      max-width: 720px;
+    }
+
+    .intro-section--cream{background: var(--hanji); max-width: none;}
+    .intro-section--cream .inner{max-width: 760px; margin: 0 auto;}
+
+    .intro-section--ink{background: var(--ink); color: var(--hanji); max-width: none;}
+    .intro-section--ink .inner{max-width: 760px; margin: 0 auto;}
+    .intro-section--ink h2{color: var(--hanji); border-color: rgba(244,237,224,.2);}
+    .intro-section--ink p{color: var(--hanji-deep);}
+    .intro-section--ink h3{color: var(--hanji);}
+    .intro-section--ink em{color: var(--ochre);}
+
+    .shape-grid{
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+      margin: 32px 0;
+    }
+    @media (max-width: 640px){.shape-grid{grid-template-columns: repeat(2, 1fr);}}
+    .shape-card{
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: 10px; padding: 20px 12px;
+      text-align: center;
+    }
+    .shape-card .shape{
+      font-family: 'Noto Serif KR', serif; font-size: 48px;
+      color: var(--ochre); line-height: 1; margin-bottom: 8px;
+      font-weight: 300;
+    }
+    .shape-card .name{font-family: var(--serif); font-size: 15px; font-weight: 500; margin-bottom: 4px;}
+    .shape-card .desc{font-size: 12px; color: var(--muted); line-height: 1.5;}
+
+    .element-table{
+      width: 100%; border-collapse: collapse; margin: 24px 0;
+      font-size: 15px;
+    }
+    .element-table th, .element-table td{
+      padding: 14px 12px; text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+    .element-table th{
+      font-family: 'Noto Serif KR', serif; font-weight: 500;
+      color: var(--ink); background: var(--hanji);
+    }
+    .element-table tr td:first-child{font-family: 'Noto Serif KR', serif; font-weight: 500; color: var(--ochre); width: 100px;}
+
+    .timeline{position: relative; padding-left: 32px; margin: 32px 0;}
+    .timeline::before{content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--line);}
+    .timeline-event{position: relative; margin-bottom: 28px;}
+    .timeline-event::before{content: ''; position: absolute; left: -32px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--ochre); border: 2px solid var(--cream);}
+    .timeline-event .year{font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 500; color: var(--ochre); margin-bottom: 4px;}
+    .timeline-event .desc{font-size: 15px; color: var(--ink-soft); line-height: 1.7;}
+
+    .cta-end{
+      background: var(--ink); color: var(--hanji);
+      padding: 80px var(--pad); text-align: center;
+    }
+    .cta-end h2{font-family: 'Noto Serif KR', serif; font-size: 40px; margin: 0 0 16px; font-weight: 500;}
+    .cta-end p{font-family: 'Noto Serif KR', serif; font-size: 18px; color: var(--hanji-deep); margin: 0 0 32px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.7;}
+    .cta-end .btns{display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;}
+    .cta-end .btn--primary{background: var(--ochre); border-color: var(--ochre); color: var(--ink);}
+    .cta-end .btn--ghost{color: var(--hanji); border-color: var(--hanji);}
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">
+      <span class="nav__logo-mark">韓</span>
+      <span class="nav__logo-text">Hanokstay <em>by Wehome</em></span>
+    </a>
+    <nav class="nav__links">
+      <a href="map.html">지도</a>
+      <a href="villages.html">한옥마을</a>
+      <a href="meongpum-gotaek.html">명품고택</a>
+      <a href="hanok-intro.html">한옥 소개</a>
+      <a href="index.html#become-host">호스트 모집</a>
+    </nav>
+  </div>
+</header>
+
+<section class="intro-hero">
+  <p class="kicker">한옥, 무엇입니까</p>
+  <h1>천 년을 살아온<br/>한 채의 <em>설계도</em>.</h1>
+  <p class="lede">한옥은 한국인이 천 년 동안 추워하고 더워하고, 슬퍼하고 기뻐하며, 그 모든 시간 동안 한반도의 사계절과 더불어 살아온 방식의 이름입니다. 단순한 옛 집이 아닙니다. 한옥은 한국이라는 풍경에 어울리는 거주의 문법이며, 매 칸마다 의미를 가진 한 채의 설계도입니다.</p>
+</section>
+
+<div class="toc-wrap">
+  <div class="intro-toc">
+    <h4>이 글에서 다루는 것</h4>
+    <a href="#def"><span>01</span>한옥의 정의</a>
+    <a href="#elements"><span>02</span>다섯 가지 요소</a>
+    <a href="#shapes"><span>03</span>평면형 — 글자로 읽는 집</a>
+    <a href="#region"><span>04</span>지역별 한옥</a>
+    <a href="#history"><span>05</span>한옥의 역사</a>
+    <a href="#room"><span>06</span>한옥의 방, 공간의 이름</a>
+    <a href="#material"><span>07</span>한옥의 재료</a>
+    <a href="#wisdom"><span>08</span>한옥의 지혜</a>
+    <a href="#today"><span>09</span>오늘의 한옥</a>
+    <a href="#stay"><span>10</span>한옥에 묵는다는 것</a>
+  </div>
+</div>
+
+<section class="intro-section" id="def">
+  <h2>01. 한옥의 정의 <span class="ch">韓屋</span></h2>
+  <p><strong>한옥(韓屋)</strong>은 한국 고유의 전통 가옥을 말합니다. 그러나 이 정의는 너무 좁습니다. 한옥은 단지 옛날 집이 아니라, <em>한국의 기후, 한국의 땅, 한국의 가족</em>에 맞춘 거주 방식 자체입니다.</p>
+  <p>건축적으로 한옥을 한옥이게 만드는 세 가지가 있습니다.</p>
+  <ul>
+    <li><strong>못 없이 짜맞춘 목조 기둥–보 구조.</strong> 나무 부재끼리 깎아 끼우는 짜맞춤(이음·맞춤) 기법으로 구조가 유지됩니다.</li>
+    <li><strong>온돌과 마루의 공존.</strong> 겨울에는 바닥을 데우는 온돌, 여름에는 통풍이 되는 마루 — 한 집 안에 두 개의 기후가 있습니다.</li>
+    <li><strong>한지(韓紙)로 마감한 창호.</strong> 닥나무 종이를 문살에 발라 만든 창과 문. 빛과 바람을 걸러내는 장치입니다.</li>
+  </ul>
+  <p>이 세 가지가 갖춰지면, 그 건물은 기와집이든 초가집이든, 임금의 궁궐이든 농민의 집이든, 모두 한옥입니다.</p>
+</section>
+
+<section class="intro-section intro-section--cream" id="elements">
+  <div class="inner">
+    <h2>02. 한옥의 다섯 가지 요소</h2>
+
+    <h3>온돌 (溫突)</h3>
+    <p>온돌은 한반도가 청동기 시대부터 발전시켜 온 <em>세계 유일의 바닥 난방 시스템</em>입니다. 부엌의 아궁이에서 불을 때면 그 연기가 방 바닥 아래 깔린 구들장(편편한 돌)을 통과하면서 돌을 데우고, 굴뚝으로 빠져나갑니다. 구들장은 밤새 천천히 열을 방으로 내보냅니다.</p>
+    <p>한국인이 침대 위가 아니라 <em>바닥에서</em> 자고, 의자가 아니라 <em>방바닥에 앉는</em> 문화의 근원이 여기에 있습니다. 한옥의 가장 따뜻한 곳은 천장이 아니라 발 밑입니다.</p>
+
+    <h3>마루 (마루)</h3>
+    <p>온돌이 겨울의 답이라면, 마루는 여름의 답입니다. 마루는 지면에서 약간 떠 있는 나무 바닥으로, 한쪽 이상이 마당으로 열려 있습니다. 8월 한낮의 마루는 마당보다 15℃ 가까이 시원합니다. 그늘 + 통풍 + 복사열 차단이 결합된 자연 냉방 장치입니다.</p>
+    <p>한옥 한 채에는 거의 언제나 <em>온돌방과 마루가 한 지붕 아래</em> 있습니다. 한 집이 두 계절을 품습니다.</p>
+
+    <h3>한지 (韓紙)</h3>
+    <p>한지는 닥나무 껍질을 두드리고 풀어 만든 종이입니다. 한옥의 창과 문에 발라지면, 빛은 투과시키되 시선은 차단합니다. 새벽이면 방 안이 한지등(韓紙燈) 안처럼 은은하게 밝아옵니다.</p>
+    <p>한지는 호흡합니다. 여름엔 습기를 흡수해 방을 건조하게 하고, 겨울엔 습기를 머금어 방이 마르지 않게 합니다. 한지창과 유리창을 비교한 연구에서 한지 쪽 방의 습도가 30% 더 안정적이라는 보고가 있을 정도입니다. 한지는 단열재이면서 동시에 조습재입니다.</p>
+
+    <h3>마당</h3>
+    <p>마당은 집의 한가운데 비워둔 땅입니다. 일본의 정원처럼 가꾸지 않고, 풀도 심지 않습니다. 흙바닥을 깨끗이 쓸어둘 뿐입니다. 한국 전통에서 마당은 <em>무대</em>이기 때문입니다.</p>
+    <p>마당에서는 혼례를 올리고, 상례를 치르고, 추수한 곡식을 말리고, 아이들이 뛰어놉니다. 한옥에서 가장 비어있지만 가장 자주 쓰이는 곳이 마당입니다. 마당은 하늘을 향해 열린 방입니다.</p>
+
+    <h3>기와 (瓦) · 처마</h3>
+    <p>한옥의 지붕선은 곡선입니다. 끝이 살짝 들려 올라간 처마는 한국의 풍경을 가장 한국적으로 만드는 선입니다. 이 곡선은 미학이기 전에 기능입니다.</p>
+    <p>처마는 한국 위도의 태양각에 맞춰져 있습니다. <em>여름의 높은 햇볕은 처마가 막아 방으로 들이지 않고, 겨울의 낮은 햇볕은 방 깊숙이 들어옵니다.</em> 처마 길이 60cm 정도의 차이가 방의 온도를 5℃ 이상 좌우합니다. 처마는 자연 차양이자 일사 조절 장치입니다.</p>
+    <p>지붕 재료에 따라 기와집(기와집)과 초가집(草家집)으로 나뉩니다. 양반 사대부 집은 기와, 평민의 집은 초가였습니다. 초가는 매년 새로 이어야 했지만 가벼웠고, 기와는 무거웠지만 오래갔습니다.</p>
+  </div>
+</section>
+
+<section class="intro-section" id="shapes">
+  <h2>03. 평면형 — 글자로 읽는 집</h2>
+  <p>한옥을 위에서 내려다 보면 한글 자모처럼 보입니다. <em>一, ㄱ, ㄴ, ㄷ, ㅁ.</em> 이 형태는 우연이 아닙니다. 기후와 가족 크기, 땅의 경사가 한옥의 모양을 그렸습니다.</p>
+
+  <div class="shape-grid">
+    <div class="shape-card"><div class="shape">一</div><div class="name">일자형</div><div class="desc">남쪽 / 통풍 우선 / 작은 가구</div></div>
+    <div class="shape-card"><div class="shape">ㄱ</div><div class="name">기역자형</div><div class="desc">중부 / 가장 흔함 / 가족용</div></div>
+    <div class="shape-card"><div class="shape">ㄴ</div><div class="name">니은자형</div><div class="desc">중부 / 기역자의 거울</div></div>
+    <div class="shape-card"><div class="shape">ㄷ</div><div class="name">디귿자형</div><div class="desc">중·북부 / 큰 가족 / 의례</div></div>
+    <div class="shape-card"><div class="shape">ㅁ</div><div class="name">미음자형</div><div class="desc">북부 / 한파·바람 차단 / 폐쇄형</div></div>
+  </div>
+
+  <p>남부 따뜻한 지역에서는 통풍이 중요해 한 줄로 길게 늘어선 <em>一자형</em>이 많습니다. 중부에서는 마당을 부분적으로 감싸는 <em>ㄱ자형, ㄷ자형</em>이 흔하고, 추운 북부로 갈수록 마당을 사방으로 감싸 바람을 막는 <em>ㅁ자형</em>이 발달했습니다.</p>
+  <p>같은 가문도 한반도 어디에 사는가에 따라 다른 모양의 한옥에서 살았습니다. 평면형은 미적 선택이 아니라 <em>기후가 그린 그림</em>입니다.</p>
+</section>
+
+<section class="intro-section intro-section--cream" id="region">
+  <div class="inner">
+    <h2>04. 지역별 한옥</h2>
+    <p>한옥은 하나가 아닙니다. 서울의 한옥과 안동의 한옥, 그리고 제주의 한옥은 같은 이름을 쓰지만 다른 건축입니다.</p>
+
+    <h3>북부 — 폐쇄적 ㅁ자</h3>
+    <p>한반도 북부는 추위와 바람이 매섭습니다. 마당을 사방으로 감싸는 ㅁ자형 한옥이 발달했습니다. 외부에서 보면 마치 작은 성벽처럼 닫혀 있고, 안으로 들어와야 비로소 마당과 하늘이 열립니다.</p>
+
+    <h3>중부 — ㄱ자·ㄷ자</h3>
+    <p>서울·경기·충청·강원의 한옥은 ㄱ자형과 ㄷ자형이 대표적입니다. 안채와 사랑채가 ㄱ자로 만나거나, 안채·사랑채·행랑채가 ㄷ자로 마당을 감쌉니다. 서울 북촌·서촌의 도시한옥은 1920년대 도시화로 작게 압축된 ㄱ자형이 많습니다.</p>
+
+    <h3>남부 — 一자·툇마루 발달</h3>
+    <p>전라·경상 남부는 따뜻해 통풍이 우선이었습니다. 一자로 길게 늘어선 한옥에 툇마루(앞마루)가 길게 발달해 거의 외부 공간처럼 쓰였습니다.</p>
+
+    <h3>제주 — 돌담·초가·정낭</h3>
+    <p>제주 한옥은 본토와 완전히 다른 건축입니다. 화산석을 쌓아 만든 검은 돌담, 태풍을 견디는 그물 모양 새끼줄로 묶은 초가지붕, 그리고 대문 대신 세 개의 굵은 나무 막대(정낭)로 출입을 표시합니다. 정낭이 모두 내려져 있으면 "집에 있다", 모두 올라가 있으면 "멀리 갔다"는 약속의 신호였습니다.</p>
+  </div>
+</section>
+
+<section class="intro-section" id="history">
+  <h2>05. 한옥의 역사</h2>
+
+  <div class="timeline">
+    <div class="timeline-event"><div class="year">청동기 ~ 삼국시대</div><div class="desc">온돌의 원형이 등장합니다. 함경도 지역의 청동기 유적에서 이미 구들 흔적이 발견됩니다. 고구려·백제·신라의 가옥은 지역에 따라 다르되 점차 정형화됩니다.</div></div>
+    <div class="timeline-event"><div class="year">고려 (918~1392)</div><div class="desc">한옥의 기본 평면과 구조가 정립됩니다. 사찰 건축이 발달하며 목조 기술이 정교해집니다. 부석사 무량수전 등 현존 최고(最古)의 목조 건축이 이 시기.</div></div>
+    <div class="timeline-event"><div class="year">조선 전기 (1392~1592)</div><div class="desc">유교적 신분 질서가 한옥의 모양을 규정합니다. 양반은 기와집, 평민은 초가집. 안채·사랑채의 분리, 사당의 배치 등 사대부 한옥의 표준이 완성됩니다. 경주 양동마을 서백당(1454년), 안동 임청각(1515년)이 이 시기.</div></div>
+    <div class="timeline-event"><div class="year">조선 후기 (1592~1897)</div><div class="desc">임진왜란·병자호란을 겪고 한옥이 재건됩니다. 부농의 등장으로 99칸 대저택이 늘어납니다. 강릉 선교장(1703년), 논산 명재고택(1709년), 청송 송소고택(1880년) 등.</div></div>
+    <div class="timeline-event"><div class="year">개항·일제강점기 (1876~1945)</div><div class="desc">서울에 <em>도시한옥</em>이 등장합니다. 1920~30년대 정세권 등 한국인 디벨로퍼가 일본식 가옥의 유입에 맞서 한옥을 도시 주택으로 재해석합니다. 익선동·북촌의 현재 모습은 이때 자리잡았습니다.</div></div>
+    <div class="timeline-event"><div class="year">광복 ~ 1990년대</div><div class="desc">한옥은 '낙후'의 상징이었습니다. 아파트가 미래로 여겨졌고, 서울 도시한옥의 95% 이상이 멸실됩니다. 같은 시기 안동댐·임하댐 건설로 수많은 종택이 수몰 위기를 맞았고, 일부는 이축(移築)으로 살아남습니다 (안동 군자마을, 안동 지례예술촌).</div></div>
+    <div class="timeline-event"><div class="year">2000년대 ~ 현재</div><div class="desc">반전이 시작됩니다. 한옥 보전 조례, 한옥체험업 법제화(2009년 관광진흥법), 한옥 카페·한옥 게스트하우스의 폭발적 증가. 2026년 현재 전국 한옥체험업 등록 약 1,450곳. 한옥은 다시 미래의 일부가 되었습니다.</div></div>
+  </div>
+</section>
+
+<section class="intro-section intro-section--ink" id="room">
+  <div class="inner">
+    <h2>06. 한옥의 방, 공간의 이름</h2>
+    <p>한옥의 모든 공간에는 기능과 함께 이름이 있습니다. 그 이름을 알면 한옥이 어떻게 가족과 사회의 관계를 공간으로 옮긴 것인지 보입니다.</p>
+
+    <table class="element-table">
+      <tr><td>안채</td><td>가족·여성의 영역. 가옥의 중심. 안방·부엌·대청을 포함.</td></tr>
+      <tr><td>사랑채</td><td>가장과 남성·손님의 영역. 책방·접객 공간. 안채와 분리됨.</td></tr>
+      <tr><td>행랑채</td><td>대문 옆 하인들의 거처. 오늘날 한옥스테이에서는 부속 객실로 자주 활용.</td></tr>
+      <tr><td>별채</td><td>본채와 별도로 지은 부속 건물. 서재·정자·손님 별당 등.</td></tr>
+      <tr><td>사당</td><td>조상의 신주(神主)를 모신 공간. 집안의 가장 안쪽, 한 단 높은 곳에 배치.</td></tr>
+      <tr><td>대청</td><td>안채의 중심 마루. 가족 의례와 식사가 이루어지는 곳.</td></tr>
+      <tr><td>안방</td><td>여주인이 거처하는 가장 안쪽 방. 집안의 가장 따뜻한 방.</td></tr>
+      <tr><td>건넌방</td><td>대청 건너편 방. 자녀나 부모가 거처.</td></tr>
+      <tr><td>부엌</td><td>아궁이가 있는 공간. 온돌의 열원. 보통 안방·건넌방보다 한 단 낮음.</td></tr>
+      <tr><td>장독대</td><td>장(醬)·김치 항아리를 모아 둔 곳. 햇볕이 잘 드는 뒤뜰이나 한 단 높은 자리에 배치.</td></tr>
+      <tr><td>마당</td><td>가옥 가운데 비어있는 땅. 의례·일·놀이의 무대.</td></tr>
+    </table>
+
+    <p>중요한 사실 하나. 한옥의 안채와 사랑채는 <em>벽으로 분리되어 있고, 두 영역 사이에 중문(中門)이 있습니다.</em> 이는 단지 남녀 분리가 아니라, 가족의 사적 공간과 사회의 공적 공간을 같은 집 안에 동시에 두는 방식입니다. 한옥은 한 채 안에 두 개의 세계를 품습니다.</p>
+  </div>
+</section>
+
+<section class="intro-section" id="material">
+  <h2>07. 한옥의 재료</h2>
+  <p>한옥은 한반도에서 나는 재료만으로 짓도록 설계되어 있습니다.</p>
+  <ul>
+    <li><strong>소나무 (적송, 춘양목)</strong> — 기둥과 보. 한반도의 산에서 자란 적송이 한옥 목재의 표준이었습니다. 봉화 춘양 일대의 춘양목이 가장 귀했습니다.</li>
+    <li><strong>황토와 점토</strong> — 벽체와 구들장, 기와의 원료. 그 지역에서 직접 캐고 빚었습니다.</li>
+    <li><strong>닥나무</strong> — 한지의 원료. 한국의 닥나무는 섬유질이 강해 세계에서 가장 질긴 종이로 평가됩니다.</li>
+    <li><strong>화강석</strong> — 주춧돌·계단·디딤돌. 다듬지 않은 자연 형태로 쓰는 경우가 많았습니다.</li>
+    <li><strong>볏짚</strong> — 초가지붕의 재료. 매년 추수 후 새로 이었습니다.</li>
+  </ul>
+  <p>이것은 우연이 아닙니다. 한옥은 <em>그 땅의 재료로만 지을 수 있는 집</em>입니다. 콘크리트나 알루미늄으로 한옥을 짓는다면 그것은 한옥의 형태일 뿐 한옥이 아닙니다. 건물 자체가 곧 그 나라입니다.</p>
+</section>
+
+<section class="intro-section intro-section--cream" id="wisdom">
+  <div class="inner">
+    <h2>08. 한옥의 지혜</h2>
+
+    <p class="pullquote">"집은 자연에 맞서지 않고 자연을 듣는다."</p>
+
+    <p>한옥은 자연과 싸우지 않습니다. 처마는 햇볕을 막지 않고 받아들이면서 조절합니다. 한지는 바람을 차단하지 않고 거릅니다. 마당은 비를 막지 않고 흡수합니다. 온돌은 추위를 거부하지 않고 미리 데웁니다.</p>
+
+    <p>현대 건축이 <em>"외부와 차단된 인공 환경"</em>을 추구한다면, 한옥은 <em>"외부와 호흡하는 반(半)자연"</em>을 추구합니다. 여름의 마루에 누우면 그늘과 바람이 몸을 식히는 것은 에어컨이 아니라 건축 자체입니다. 겨울 방 안의 온기는 보일러가 아니라 어제 저녁 부엌에서 밥을 지은 그 불의 잔열입니다.</p>
+
+    <p>한옥에서 하룻밤을 보내면 평소 의식하지 않던 감각이 돌아옵니다. 종이가 빛을 거른다는 사실, 마룻바닥이 발에 차다는 사실, 흙벽이 공기를 머금는다는 사실. 한옥은 인공이지만, 우리에게 자연을 다시 알려줍니다.</p>
+  </div>
+</section>
+
+<section class="intro-section" id="today">
+  <h2>09. 오늘의 한옥</h2>
+  <p>2026년 현재, 한국에는 <em>한옥체험업으로 정식 등록된 한옥이 약 1,450곳</em> 있습니다. 그중 약 70% 이상이 한국관광공사의 한옥스테이 인증을 받았고, 그중 다시 약 1.5%(20여 곳)가 명품고택입니다.</p>
+  <p>지역별로는 <strong>전라북도(전주 한옥마을)가 가장 많고</strong>, 그 다음이 서울(북촌·서촌·익선동), 경상북도(안동·경주) 순입니다. 인바운드 외국인 관광객의 한옥 선호는 매년 증가하고 있으며, 특히 일본·동남아·서구 관광객의 한옥 1박 비중이 크게 늘었습니다.</p>
+  <p>그러나 시장은 분산되어 있습니다. 합법 운영하는 한옥체험업조차 통합된 예약 채널이 없고, 외국인이 접근할 영문/일문/중문 정보는 거의 없습니다. <em>한옥은 있는데, 한옥에 가는 길이 없는</em> 상황입니다. 위홈 Hanokstay 가 만드는 것이 바로 그 길입니다.</p>
+</section>
+
+<section class="cta-end" id="stay">
+  <h2>한옥에 묵는다는 것</h2>
+  <p>한옥에 묵는다는 것은 박물관에 자는 일이 아닙니다. 종이가 호흡하고, 바닥이 데워지고, 처마가 햇볕을 거르고, 마당이 비를 받아들이는 — 그 모든 일이 일어나는 한 채의 집에 잠시 거주하는 일입니다. 한국이 천 년 동안 가다듬은 거주의 문법 안에서 하룻밤을 보내는 일입니다.</p>
+  <div class="btns">
+    <a href="index.html" class="btn btn--primary">한옥 찾기 →</a>
+    <a href="map.html" class="btn btn--ghost">지도로 보기</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__logo"><span class="nav__logo-mark">韓</span> Hanokstay <em>by Wehome</em></div>
+      <p>한옥에 묵는 가장 합법적인 방법.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>둘러보기</h4>
+        <a href="map.html">지도·통계</a>
+        <a href="villages.html">한옥마을</a>
+        <a href="meongpum-gotaek.html">명품고택</a>
+        <a href="hanok-intro.html">한옥 소개</a>
+      </div>
+      <div>
+        <h4>호스트</h4>
+        <a href="index.html#become-host">호스트 모집</a>
+      </div>
+      <div>
+        <h4>위홈</h4>
+        <a href="https://wehome.me">메인 플랫폼</a>
+        <a href="mailto:hanok@wehome.me">hanok@wehome.me</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Wehome Inc.</span>
+    <span>Seoul · Korea</span>
+  </div>
+</footer>
+
+</body>
+</html>

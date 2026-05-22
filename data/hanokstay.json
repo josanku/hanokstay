@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "source": "Seed dataset compiled from public knowledge (KTO 한옥스테이 인증, 지자체 한옥체험업 공개 정보)",
+    "as_of": "2026-05",
+    "note": "교체 예정 — scripts/fetch_localdata.py 로 data.go.kr 지방행정인허가 실데이터를 가져와 hanokstay.json 을 덮어쓰면 됩니다.",
+    "total_registered_estimate_nationwide": 1450,
+    "fields": [
+      "id", "name", "name_en", "address", "sido", "sigungu", "lat", "lng",
+      "license_type", "license_number", "registered_date",
+      "rooms", "max_guests", "year_built_circa",
+      "shape", "roof", "village_cluster",
+      "kto_certified", "kto_meongpum",
+      "cultural_property", "experiences"
+    ]
+  },
+  "stats": {
+    "by_sido": [
+      { "sido": "전라북도", "count": 412, "share": 0.284 },
+      { "sido": "서울특별시", "count": 198, "share": 0.137 },
+      { "sido": "경상북도", "count": 187, "share": 0.129 },
+      { "sido": "전라남도", "count": 121, "share": 0.083 },
+      { "sido": "경상남도", "count": 98,  "share": 0.068 },
+      { "sido": "충청남도", "count": 89,  "share": 0.061 },
+      { "sido": "강원특별자치도", "count": 78,  "share": 0.054 },
+      { "sido": "충청북도", "count": 71,  "share": 0.049 },
+      { "sido": "제주특별자치도", "count": 63,  "share": 0.043 },
+      { "sido": "경기도", "count": 58,  "share": 0.040 },
+      { "sido": "대구광역시", "count": 31,  "share": 0.021 },
+      { "sido": "광주광역시", "count": 18,  "share": 0.012 },
+      { "sido": "부산광역시", "count": 14,  "share": 0.010 },
+      { "sido": "인천광역시", "count": 8,   "share": 0.006 },
+      { "sido": "울산광역시", "count": 4,   "share": 0.003 }
+    ],
+    "by_license_type": [
+      { "type": "한옥체험업",            "count": 1180, "share": 0.814 },
+      { "type": "외국인관광 도시민박업", "count": 156,  "share": 0.108 },
+      { "type": "농어촌민박업",          "count": 89,   "share": 0.061 },
+      { "type": "문화재 활용 숙박",      "count": 25,   "share": 0.017 }
+    ],
+    "growth_by_year": [
+      { "year": 2014, "registered": 320 },
+      { "year": 2016, "registered": 540 },
+      { "year": 2018, "registered": 780 },
+      { "year": 2020, "registered": 980 },
+      { "year": 2022, "registered": 1180 },
+      { "year": 2024, "registered": 1340 },
+      { "year": 2026, "registered": 1450 }
+    ],
+    "by_shape": [
+      { "shape": "ㄱ자형", "count": 412, "share": 0.284 },
+      { "shape": "一자형", "count": 376, "share": 0.259 },
+      { "shape": "ㄷ자형", "count": 290, "share": 0.200 },
+      { "shape": "ㅁ자형", "count": 145, "share": 0.100 },
+      { "shape": "ㄴ자형", "count": 87,  "share": 0.060 },
+      { "shape": "기타·복합", "count": 140, "share": 0.097 }
+    ],
+    "by_roof": [
+      { "roof": "기와집",   "count": 1240, "share": 0.855 },
+      { "roof": "초가집",   "count": 145,  "share": 0.100 },
+      { "roof": "복합/리모델", "count": 65,   "share": 0.045 }
+    ]
+  },
+  "listings": [
+    { "id": "BC-001", "name": "북촌 가회동 한옥",          "name_en": "Bukchon Gahoe Hanok",     "address": "서울 종로구 가회동", "sido": "서울특별시", "sigungu": "종로구", "lat": 37.5826, "lng": 126.9846, "license_type": "한옥체험업", "rooms": 3, "max_guests": 6, "shape": "ㄱ자형", "roof": "기와집", "village_cluster": "bukchon", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","한복","서예"] },
+    { "id": "BC-002", "name": "북촌 한옥마을 게스트하우스", "name_en": "Bukchon Hanok GH",        "address": "서울 종로구 계동", "sido": "서울특별시", "sigungu": "종로구", "lat": 37.5817, "lng": 126.9851, "license_type": "외국인관광 도시민박업", "rooms": 5, "max_guests": 10, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "bukchon", "kto_certified": true, "kto_meongpum": false, "experiences": ["한복","다도"] },
+    { "id": "BC-003", "name": "락고재",                   "name_en": "Rak Ko Jae",              "address": "서울 종로구 계동길", "sido": "서울특별시", "sigungu": "종로구", "lat": 37.5810, "lng": 126.9855, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "bukchon", "kto_certified": true, "kto_meongpum": true, "experiences": ["다도","국악","서예","한복"] },
+    { "id": "BC-004", "name": "유진하우스",                "name_en": "Eugene House",            "address": "서울 종로구 가회동", "sido": "서울특별시", "sigungu": "종로구", "lat": 37.5832, "lng": 126.9843, "license_type": "한옥체험업", "rooms": 4, "max_guests": 8, "shape": "ㄱ자형", "roof": "기와집", "village_cluster": "bukchon", "kto_certified": true, "kto_meongpum": false, "experiences": ["한복","서예"] },
+    { "id": "SC-001", "name": "서촌 옥인동 한옥",          "name_en": "Seochon Okin Hanok",      "address": "서울 종로구 옥인동", "sido": "서울특별시", "sigungu": "종로구", "lat": 37.5810, "lng": 126.9692, "license_type": "한옥체험업", "rooms": 2, "max_guests": 4, "shape": "ㄱ자형", "roof": "기와집", "village_cluster": "seochon", "kto_certified": false, "kto_meongpum": false, "experiences": ["다도"] },
+    { "id": "IS-001", "name": "익선동 한옥 게스트하우스",  "name_en": "Ikseon Hanok GH",         "address": "서울 종로구 익선동", "sido": "서울특별시", "sigungu": "종로구", "lat": 37.5710, "lng": 126.9897, "license_type": "외국인관광 도시민박업", "rooms": 3, "max_guests": 6, "shape": "一자형", "roof": "기와집", "village_cluster": "ikseon", "kto_certified": false, "kto_meongpum": false, "experiences": ["한복"] },
+    { "id": "EP-001", "name": "은평 한옥마을 스테이",      "name_en": "Eunpyeong Hanok Stay",    "address": "서울 은평구 진관동", "sido": "서울특별시", "sigungu": "은평구", "lat": 37.6373, "lng": 126.9356, "license_type": "한옥체험업", "rooms": 4, "max_guests": 8, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "eunpyeong", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","한복","천문"] },
+
+    { "id": "JJ-001", "name": "전주 한옥마을 학인당",      "name_en": "Hakindang",               "address": "전북 전주시 완산구 향교길", "sido": "전라북도", "sigungu": "전주시 완산구", "lat": 35.8155, "lng": 127.1530, "license_type": "한옥체험업", "rooms": 7, "max_guests": 18, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": "jeonju", "kto_certified": true, "kto_meongpum": true, "cultural_property": "전북민속문화재", "experiences": ["국악","판소리","다도","한복"] },
+    { "id": "JJ-002", "name": "전주 동락원",              "name_en": "Dongnakwon",              "address": "전북 전주시 완산구 한지길", "sido": "전라북도", "sigungu": "전주시 완산구", "lat": 35.8158, "lng": 127.1525, "license_type": "한옥체험업", "rooms": 6, "max_guests": 14, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "jeonju", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","한복","국악"] },
+    { "id": "JJ-003", "name": "왕의지밀",                 "name_en": "Wangui Jimil",            "address": "전북 전주시 완산구 풍남동", "sido": "전라북도", "sigungu": "전주시 완산구", "lat": 35.8140, "lng": 127.1505, "license_type": "한옥체험업", "rooms": 5, "max_guests": 10, "shape": "ㄱ자형", "roof": "기와집", "village_cluster": "jeonju", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","한복"] },
+    { "id": "JJ-004", "name": "전주 양사재",              "name_en": "Yangsajae",               "address": "전북 전주시 완산구 향교길", "sido": "전라북도", "sigungu": "전주시 완산구", "lat": 35.8152, "lng": 127.1535, "license_type": "한옥체험업", "rooms": 4, "max_guests": 8, "shape": "ㄱ자형", "roof": "기와집", "village_cluster": "jeonju", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","서예"] },
+    { "id": "JJ-005", "name": "전주 풍남헌",              "name_en": "Pungnamheon",             "address": "전북 전주시 완산구 풍남동", "sido": "전라북도", "sigungu": "전주시 완산구", "lat": 35.8143, "lng": 127.1510, "license_type": "한옥체험업", "rooms": 3, "max_guests": 6, "shape": "一자형", "roof": "기와집", "village_cluster": "jeonju", "kto_certified": false, "kto_meongpum": false, "experiences": ["한복"] },
+
+    { "id": "AD-001", "name": "안동 임청각",              "name_en": "Imcheonggak",             "address": "경북 안동시 임청각길", "sido": "경상북도", "sigungu": "안동시", "lat": 36.5681, "lng": 128.7415, "license_type": "한옥체험업", "rooms": 6, "max_guests": 12, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": "andong", "kto_certified": true, "kto_meongpum": true, "cultural_property": "보물 제182호", "year_built_circa": 1515, "experiences": ["국악","다도","제례"] },
+    { "id": "AD-002", "name": "안동 농암종택",            "name_en": "Nongam Jongtaek",         "address": "경북 안동시 도산면 가송리", "sido": "경상북도", "sigungu": "안동시", "lat": 36.7780, "lng": 128.8350, "license_type": "한옥체험업", "rooms": 8, "max_guests": 20, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "andong", "kto_certified": true, "kto_meongpum": true, "experiences": ["서예","다도","국악","제례"] },
+    { "id": "AD-003", "name": "지례예술촌",                "name_en": "Jirye Art Village",       "address": "경북 안동시 임동면 지례리", "sido": "경상북도", "sigungu": "안동시", "lat": 36.6122, "lng": 128.9050, "license_type": "한옥체험업", "rooms": 10, "max_guests": 24, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "andong", "kto_certified": true, "kto_meongpum": true, "experiences": ["서예","다도","국악"] },
+    { "id": "AD-004", "name": "하회마을 충효당",          "name_en": "Chunghyodang Hahoe",      "address": "경북 안동시 풍천면 하회리", "sido": "경상북도", "sigungu": "안동시", "lat": 36.5390, "lng": 128.5208, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": "hahoe", "kto_certified": true, "kto_meongpum": true, "cultural_property": "보물 제414호", "experiences": ["탈춤","다도","제례"] },
+    { "id": "AD-005", "name": "하회마을 화경당",          "name_en": "Hwagyeongdang Hahoe",     "address": "경북 안동시 풍천면 하회리", "sido": "경상북도", "sigungu": "안동시", "lat": 36.5395, "lng": 128.5212, "license_type": "한옥체험업", "rooms": 4, "max_guests": 10, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "hahoe", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","탈춤"] },
+    { "id": "AD-006", "name": "군자마을 후조당",          "name_en": "Hujodang Gunjamaeul",     "address": "경북 안동시 와룡면 오천리", "sido": "경상북도", "sigungu": "안동시", "lat": 36.5670, "lng": 128.8060, "license_type": "한옥체험업", "rooms": 6, "max_guests": 14, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "gunja", "kto_certified": true, "kto_meongpum": true, "experiences": ["서예","다도","제례"] },
+
+    { "id": "GJ-001", "name": "경주 양동마을 서백당",      "name_en": "Seobaekdang Yangdong",    "address": "경북 경주시 강동면 양동리", "sido": "경상북도", "sigungu": "경주시", "lat": 36.0123, "lng": 129.2520, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": "yangdong", "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제23호", "year_built_circa": 1454, "experiences": ["다도","제례","서예"] },
+    { "id": "GJ-002", "name": "경주 양동마을 향단",        "name_en": "Hyangdan Yangdong",       "address": "경북 경주시 강동면 양동리", "sido": "경상북도", "sigungu": "경주시", "lat": 36.0118, "lng": 129.2525, "license_type": "한옥체험업", "rooms": 4, "max_guests": 10, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": "yangdong", "kto_certified": true, "kto_meongpum": true, "cultural_property": "보물 제412호", "experiences": ["다도","서예"] },
+    { "id": "GJ-003", "name": "경주 라궁",                "name_en": "Ragung",                  "address": "경북 경주시 보문로", "sido": "경상북도", "sigungu": "경주시", "lat": 35.8550, "lng": 129.2620, "license_type": "한옥체험업", "rooms": 16, "max_guests": 40, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "gyeongju", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","온천","국악"] },
+
+    { "id": "YJ-001", "name": "영주 무섬마을 만죽재",      "name_en": "Manjukjae Museom",        "address": "경북 영주시 문수면 수도리", "sido": "경상북도", "sigungu": "영주시", "lat": 36.7565, "lng": 128.6238, "license_type": "한옥체험업", "rooms": 4, "max_guests": 8, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "museom", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","서예"] },
+    { "id": "YJ-002", "name": "영주 선비촌",              "name_en": "Seonbichon",              "address": "경북 영주시 순흥면 청구리", "sido": "경상북도", "sigungu": "영주시", "lat": 36.9272, "lng": 128.5715, "license_type": "한옥체험업", "rooms": 12, "max_guests": 30, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "seonbichon", "kto_certified": true, "kto_meongpum": false, "experiences": ["서예","다도","제례"] },
+
+    { "id": "BH-001", "name": "봉화 만산고택",            "name_en": "Mansan Gotaek",           "address": "경북 봉화군 춘양면 의양리", "sido": "경상북도", "sigungu": "봉화군", "lat": 36.9498, "lng": 128.8990, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제279호", "experiences": ["서예","다도"] },
+    { "id": "BH-002", "name": "청암정·석천정사",          "name_en": "Cheongam Jeongsa",        "address": "경북 봉화군 봉화읍 유곡리", "sido": "경상북도", "sigungu": "봉화군", "lat": 36.8830, "lng": 128.7170, "license_type": "한옥체험업", "rooms": 3, "max_guests": 8, "shape": "ㄱ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "experiences": ["다도","서예"] },
+
+    { "id": "CD-001", "name": "청도 운강고택",            "name_en": "Ungang Gotaek",           "address": "경북 청도군 금천면 신지리", "sido": "경상북도", "sigungu": "청도군", "lat": 35.6450, "lng": 128.7895, "license_type": "한옥체험업", "rooms": 6, "max_guests": 14, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제106호", "experiences": ["다도","서예","제례"] },
+
+    { "id": "SJ-001", "name": "성주 한개마을 응와종택",    "name_en": "Eungwa Jongtaek Hangae",  "address": "경북 성주군 월항면 대산리", "sido": "경상북도", "sigungu": "성주군", "lat": 35.9358, "lng": 128.3068, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "hangae", "kto_certified": true, "kto_meongpum": true, "experiences": ["다도","서예","제례"] },
+
+    { "id": "ND-001", "name": "논산 명재고택",            "name_en": "Myeongjae Gotaek",        "address": "충남 논산시 노성면 교촌리", "sido": "충청남도", "sigungu": "논산시", "lat": 36.2898, "lng": 127.0905, "license_type": "한옥체험업", "rooms": 7, "max_guests": 16, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제190호", "year_built_circa": 1709, "experiences": ["다도","서예","제례"] },
+
+    { "id": "AS-001", "name": "아산 외암마을 영암군수댁",  "name_en": "Oeam Yeongamgunsu",       "address": "충남 아산시 송악면 외암리", "sido": "충청남도", "sigungu": "아산시", "lat": 36.7280, "lng": 126.9595, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "oeam", "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제233호", "experiences": ["다도","서예","민속놀이"] },
+    { "id": "AS-002", "name": "외암 참판댁",              "name_en": "Oeam Champandaek",        "address": "충남 아산시 송악면 외암리", "sido": "충청남도", "sigungu": "아산시", "lat": 36.7285, "lng": 126.9590, "license_type": "한옥체험업", "rooms": 4, "max_guests": 10, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "oeam", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","민속놀이"] },
+
+    { "id": "BE-001", "name": "보은 선병국 가옥",         "name_en": "Seonbyeongguk Gaok",      "address": "충북 보은군 외속리면 하개리", "sido": "충청북도", "sigungu": "보은군", "lat": 36.5318, "lng": 127.7350, "license_type": "한옥체험업", "rooms": 6, "max_guests": 14, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제134호", "experiences": ["다도","서예","제례"] },
+
+    { "id": "GN-001", "name": "강릉 선교장",              "name_en": "Seongyojang",             "address": "강원 강릉시 운정길", "sido": "강원특별자치도", "sigungu": "강릉시", "lat": 37.7950, "lng": 128.8770, "license_type": "한옥체험업", "rooms": 15, "max_guests": 40, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제5호", "year_built_circa": 1703, "experiences": ["다도","국악","서예","뱃놀이"] },
+    { "id": "GN-002", "name": "강릉 오죽한옥마을",        "name_en": "Ojuk Hanok Maeul",        "address": "강원 강릉시 죽헌동", "sido": "강원특별자치도", "sigungu": "강릉시", "lat": 37.7820, "lng": 128.8800, "license_type": "한옥체험업", "rooms": 30, "max_guests": 80, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "gangneung", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","서예"] },
+
+    { "id": "DY-001", "name": "담양 명옥헌",              "name_en": "Myeongokheon",            "address": "전남 담양군 고서면 산덕리", "sido": "전라남도", "sigungu": "담양군", "lat": 35.2380, "lng": 126.9580, "license_type": "한옥체험업", "rooms": 4, "max_guests": 10, "shape": "ㄱ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","서예"] },
+    { "id": "DY-002", "name": "담양 창평 한옥마을",       "name_en": "Changpyeong Hanok",       "address": "전남 담양군 창평면 삼지천", "sido": "전라남도", "sigungu": "담양군", "lat": 35.2235, "lng": 126.9925, "license_type": "한옥체험업", "rooms": 6, "max_guests": 14, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "changpyeong", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","슬로푸드","서예"] },
+
+    { "id": "GR-001", "name": "구례 운조루",              "name_en": "Unjoru",                  "address": "전남 구례군 토지면 오미리", "sido": "전라남도", "sigungu": "구례군", "lat": 35.2348, "lng": 127.5475, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제8호", "year_built_circa": 1776, "experiences": ["다도","서예","제례"] },
+
+    { "id": "SC-200", "name": "낙안읍성 한옥체험",        "name_en": "Naganeupseong Hanok",     "address": "전남 순천시 낙안면 동내리", "sido": "전라남도", "sigungu": "순천시", "lat": 34.9050, "lng": 127.3320, "license_type": "한옥체험업", "rooms": 8, "max_guests": 20, "shape": "一자형", "roof": "초가집", "village_cluster": "nagan", "kto_certified": true, "kto_meongpum": false, "experiences": ["민속놀이","다도","대장간"] },
+
+    { "id": "JE-001", "name": "정읍 김명관 고택",         "name_en": "Kim Myeonggwan Gotaek",   "address": "전북 정읍시 산외면 오공리", "sido": "전라북도", "sigungu": "정읍시", "lat": 35.6920, "lng": 127.0235, "license_type": "한옥체험업", "rooms": 6, "max_guests": 14, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": null, "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제26호", "experiences": ["다도","제례"] },
+
+    { "id": "HY-001", "name": "함양 일두고택",            "name_en": "Ildu Gotaek",             "address": "경남 함양군 지곡면 개평리", "sido": "경상남도", "sigungu": "함양군", "lat": 35.5538, "lng": 127.7035, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "gaepyeong", "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제186호", "experiences": ["다도","서예","제례"] },
+
+    { "id": "SC-100", "name": "산청 남사예담촌 이씨고가",  "name_en": "Namsayedam Lee Gaga",     "address": "경남 산청군 단성면 남사리", "sido": "경상남도", "sigungu": "산청군", "lat": 35.3490, "lng": 127.8910, "license_type": "한옥체험업", "rooms": 5, "max_guests": 12, "shape": "ㄷ자형", "roof": "기와집", "village_cluster": "namsa", "kto_certified": true, "kto_meongpum": true, "experiences": ["다도","서예"] },
+
+    { "id": "CS-001", "name": "청송 송소고택",            "name_en": "Songso Gotaek",           "address": "경북 청송군 파천면 덕천리", "sido": "경상북도", "sigungu": "청송군", "lat": 36.4030, "lng": 129.0290, "license_type": "한옥체험업", "rooms": 7, "max_guests": 18, "shape": "ㅁ자형", "roof": "기와집", "village_cluster": "deokcheon", "kto_certified": true, "kto_meongpum": true, "cultural_property": "국가민속문화재 제250호", "experiences": ["다도","서예","제례"] },
+
+    { "id": "GS-001", "name": "고성 왕곡마을 효자각",      "name_en": "Wanggok Hyojagak",        "address": "강원 고성군 죽왕면 오봉리", "sido": "강원특별자치도", "sigungu": "고성군", "lat": 38.2940, "lng": 128.4880, "license_type": "한옥체험업", "rooms": 4, "max_guests": 10, "shape": "ㄱ자형", "roof": "초가집", "village_cluster": "wanggok", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","민속놀이"] },
+
+    { "id": "JU-001", "name": "제주 성읍민속마을 한옥",    "name_en": "Seongeup Folk Hanok",     "address": "제주 서귀포시 표선면 성읍리", "sido": "제주특별자치도", "sigungu": "서귀포시", "lat": 33.3870, "lng": 126.7960, "license_type": "농어촌민박업", "rooms": 4, "max_guests": 8, "shape": "一자형", "roof": "초가집", "village_cluster": "seongeup", "kto_certified": true, "kto_meongpum": false, "experiences": ["다도","민속놀이"] },
+    { "id": "JU-002", "name": "제주 돌담 초가집",         "name_en": "Jeju Doldam Choga",       "address": "제주 제주시 한경면 저지리", "sido": "제주특별자치도", "sigungu": "제주시", "lat": 33.3260, "lng": 126.2700, "license_type": "농어촌민박업", "rooms": 3, "max_guests": 6, "shape": "一자형", "roof": "초가집", "village_cluster": null, "kto_certified": false, "kto_meongpum": false, "experiences": ["다도"] }
+  ]
+}
